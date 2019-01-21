@@ -1,0 +1,16 @@
+#!/bin/bash
+sleep 1
+echo 'Starting Keymaping Script...'
+modprobe -r nuvoton_cir
+sleep 1
+echo "blacklist nuvoton-cir" | sudo tee /etc/modprobe.d/blacklist-nuvoton-cir.conf
+sleep 1
+echo 'Echoing...'
+#echo "auto" > /sys/bus/acpi/devices/ITE8713:00/physical_node/resources  ??????????????
+echo 'Clearing the old keytable...'
+ir-keytable -c
+sleep 1
+echo 'Injecting the new keytable...'
+ir-keytable -p nec,rc-6 -w /etc/rc_keymaps/apple_a1156
+ir-keytable -p nec,rc-6 -w /etc/rc_keymaps/avermedia_rm-ks
+echo 'Done.'

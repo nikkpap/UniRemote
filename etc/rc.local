@@ -1,0 +1,15 @@
+#!/bin/sh -e
+#
+# rc.local
+#
+# This script is executed at the end of each multiuser runlevel.
+# Make sure that the script will "exit 0" on success or any other
+# value on error.
+
+
+#/etc/init.d/script_keymap_config
+
+sudo ir-keytable -p nec,rc-6 -w /etc/rc_keymaps/apple_a1156
+sudo ir-keytable -p nec,rc-6 -w /etc/rc_keymaps/avermedia_rm-ks
+
+exit 0
