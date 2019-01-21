@@ -1,4 +1,4 @@
-UniRemote
+# UniRemote
 
 UniRemote is just an ir remote control script for linux (Tested on Ubuntu 18.10)...
 Uses the ir-keytables and purges lirc from system.
